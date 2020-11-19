@@ -1,0 +1,51 @@
+.Container {
+  display: flex;
+  height: 100vh;
+
+  & .AuthForm {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 30%;
+    background-color: #002b49;
+    color: white;
+
+    & img {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    & .formGroup {
+      margin: 1rem 0;
+
+      & input, & label {
+        display: block;
+        width: 100%;
+        padding: 1rem 0 1rem .5rem;
+        font-size: 125%;
+      }
+    }
+
+    & button {
+      margin-top: 1rem;
+      padding: .5rem 1rem;
+      font-size: 2rem;
+
+      &:hover {
+        // background-color: #1C273F;
+      }
+    }
+  }
+
+
+  & .Image {
+    background-color: #333;
+    border: 2px solid red;
+    flex-basis: 70%;
+    background-image: url("./abstractData.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+  }
+}
