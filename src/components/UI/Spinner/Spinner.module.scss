@@ -1,3 +1,5 @@
+@import "../../../variables";
+
 .loaderContainer {
   display: flex;
   flex-direction: column;
@@ -18,10 +20,10 @@
 
 .loader {
   margin-top: 16px;
-  border-top: 10px solid #002B49;
-  border-right: 10px solid rgba(136, 136, 136, 0.2);
-  border-bottom: 10px solid rgba(136, 136, 136, 0.2);
-  border-left: 10px solid rgba(136, 136, 136, 0.2);
+  border-top: 10px solid $primary-color;
+  border-bottom: 10px solid lighten($primary-color, 20%);
+  border-right: 10px solid lighten($primary-color, 20%);
+  border-left: 10px solid lighten($primary-color, 20%);
   animation: spinner 0.9s linear infinite;
   border-radius: 50%;
   width: 64px;

@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .Container {
   display: flex;
   height: 100vh;
@@ -6,9 +8,9 @@
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     flex-basis: 30%;
-    background-color: #002b49;
+    background-color: $primary-color;
     color: white;
 
     & img {
@@ -41,7 +43,6 @@
 
   & .Image {
     background-color: #333;
-    border: 2px solid red;
     flex-basis: 70%;
     background-image: url("./abstractData.jpg");
     background-size: cover;
