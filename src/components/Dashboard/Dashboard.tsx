@@ -2,30 +2,29 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Dashboard.module.scss";
 
+import { CSSTransition } from "react-transition-group";
+import Header from "../Header/Header";
+
 const Dashboard: React.FC = (props) => {
-  const [expanded, setExpanded] = useState(false);
-  const [opened, setOpened] = useState(true);
+  const [inProp, setInProp] = useState(false);
   return (
-    <nav
-      className={
-        expanded ? `${styles.Container} ${styles.Expanded}` : styles.Container
-      }
-      onMouseEnter={() => {
-        setExpanded(true);
-        setOpened(true);
-      }}
-      onMouseLeave={() => setExpanded(false)}
-    >
-      <div className={styles.LogoContainer}>
-        <img src="images/reactAdminkaLogoWhite.png" alt="Logo" />
-      </div>
-      <ul className={styles.DashboardSection}>
-        <div onClick={() => setOpened(!opened)}>
-          <div className={styles.circle}></div>
-          {expanded && <h2>Dashboard</h2>}
+    <div>
+      <nav
+        className={styles.Container}
+        onClick={() => {
+          setInProp(!inProp);
+          console.log(inProp);
+        }}
+      >
+        <div className={styles.LogoContainer}>
+          <img src="images/reactAdminkaLogoWhite.png" alt="Logo" />
         </div>
-        {opened && (
-          <>
+        <div>
+          <div className={styles.circle}></div>
+          <h2>Dashboard</h2>
+        </div>
+        <CSSTransition in={inProp} timeout={1000} classNames="my-node">
+          <ul className={styles.DashboardSection}>
             <li>
               <NavLink to="/analytics" activeClassName={styles.active}>
                 Analytics
@@ -41,10 +40,13 @@ const Dashboard: React.FC = (props) => {
                 Widgets
               </NavLink>
             </li>
-          </>
-        )}
-      </ul>
-    </nav>
+          </ul>
+        </CSSTransition>
+      </nav>
+      <div className={styles.header}>
+        <Header />
+      </div>
+    </div>
   );
 };
 
