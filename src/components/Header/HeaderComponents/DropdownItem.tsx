@@ -16,11 +16,11 @@ const DropdownItem: React.FC<DropdownProps> = (props) => {
     }
   }
   return (
-    <a href="#$" className="menu-item" onClick={()=>changeActiveMenu(props.goToMenu as menu)}>
+    <div className="menu-item" onClick={()=>changeActiveMenu(props.goToMenu as menu)}>
       <span className="icon-button icon-left">{props.leftIcon}</span>
       {props.children}
       <span className="icon-button icon-right">{props.rightIcon}</span>
-    </a>
+    </div>
   );
 };
 

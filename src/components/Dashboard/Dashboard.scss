@@ -1,0 +1,116 @@
+@import "../../variables";
+
+.Container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  transition: all 1s ease;
+  width: 100px;
+  height: 100vh;
+  color: white;
+  background-color: $primary-color;
+
+  ul {
+    z-index: 5;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
+    & a {
+      display: inline-block;
+      margin-left: 3rem;
+      margin-bottom: 1rem;
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+
+  & .LogoContainer {
+    width: 80px;
+    margin: 0 auto;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  & .Section {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+  }
+
+  .Circle {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+  }
+}
+.DashboardSection {
+  opacity: 0;
+  background-color: darken($primary-color, 10%);
+  width: 100%;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.my-node-enter {
+  width: 100px;
+}
+.my-node-enter-active {
+  width: 250px;
+  transition: width 200ms;
+}
+.my-node-enter-done {
+  width: 250px;
+}
+.my-node-exit {
+  width: 250px;
+}
+.my-node-exit-active {
+  width: 100px;
+  transition: width 200ms;
+}
+
+.second-step-enter {
+  transition: opacity 200ms, transform 200ms;
+  opacity: 0;
+  transform: translateX(-200px);
+}
+.second-step-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.second-step-enter-done {
+  opacity: 1;
+  transform: translateX(0);
+}
+.second-step-exit {
+  transition: opacity 200ms, transform 200ms;
+}
+.second-step-exit-active {
+  opacity: 0;
+  transform: translateX(-400px);
+}
+.second-step-exit-done {
+  opacity: 0;
+  transform: translateX(-100px);
+}

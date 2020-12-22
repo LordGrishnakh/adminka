@@ -8,19 +8,13 @@
   --speed: 500ms;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-a {
+.nav-item a {
   color: var(--text-color);
   background-color: var(--bg-accent);
   font-size: 2rem;
@@ -52,10 +46,10 @@ a {
   --button-size: calc(var(--nav-size) * 0.5);
   width: var(--button-size);
   height: var(--button-size);
-  background-color: #333;
+  background-color: black;
   border-radius: 50%;
   padding: 5px;
-  margin: 2px;
+  margin: 2px 6px 2px 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,6 +83,8 @@ a {
 }
 
 .menu-item {
+  color: white;
+  font-size: 1.25rem;
   height: 50px;
   display: flex;
   align-items: center;
