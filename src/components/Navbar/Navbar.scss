@@ -1,0 +1,46 @@
+.Navbar {
+  height: 92px;
+  width: calc(100vw - 101px);
+  border: 1px solid #707070;
+  padding: 0 1rem;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+
+  position: absolute;
+  top: 0;
+  left: 100px;
+  z-index: 1;
+
+  & .Avatar {
+    border: 1px solid #707070;
+    height: 50px;
+    width: 50px;
+    padding: 0.2em;
+    border-radius: 50%;
+  }
+
+  & .LocalSettings {
+    width: 50px;
+    cursor: pointer;
+    border: 1px solid #707070;
+    padding: 0.2em;
+    border-radius: 50%;
+
+    &:hover {
+      animation: rotation 3s infinite;
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

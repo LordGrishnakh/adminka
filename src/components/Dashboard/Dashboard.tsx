@@ -4,10 +4,10 @@ import "./Dashboard.scss";
 
 import { CSSTransition } from "react-transition-group";
 import Header from "../Header/Header";
+import Navbar from "../Navbar/Navbar";
 
 const Dashboard: React.FC = (props) => {
   const [inProp, setInProp] = useState(false);
-  const [open, setOpen] = useState(false);
   const [expand, setExpand] = useState(false);
 
   console.log(expand);
@@ -27,10 +27,7 @@ const Dashboard: React.FC = (props) => {
         <nav
           className="Container"
           onMouseEnter={expandSidebarhandler}
-          onMouseLeave={!open ? hideSidebarhandler : () => {}}
-          onClick={() => {
-            setOpen(!open);
-          }}
+          onMouseLeave={hideSidebarhandler}
         >
           <div className="LogoContainer">
             <img src="images/reactAdminkaLogoWhite.png" alt="Logo" />
@@ -58,8 +55,18 @@ const Dashboard: React.FC = (props) => {
               </li>
             </ul>
           </CSSTransition>
+          <div className="Section" onClick={() => setExpand(!expand)}>
+            <span className="Circle"></span>
+            {inProp && <h2>Dashboard</h2>}
+          </div>
+          <div className="Section" onClick={() => setExpand(!expand)}>
+            <span className="Circle"></span>
+            {inProp && <h2>Dashboard</h2>}
+          </div>
         </nav>
       </CSSTransition>
+      {/* весь верхний навбар - полоса с аватаром, никнеймом инастройками */}
+      <Navbar />
       <div className="header">
         <Header />
       </div>
