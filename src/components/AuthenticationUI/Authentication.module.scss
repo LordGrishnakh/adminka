@@ -13,11 +13,12 @@
     background-color: $primary-color;
     color: white;
 
+    
     & img {
       width: 50%;
       margin: 0 auto;
     }
-
+    
     & .formGroup {
       margin: 1rem 0;
 
@@ -26,6 +27,17 @@
         width: 100%;
         padding: 1rem 0 1rem .5rem;
         font-size: 125%;
+      }
+
+      & input {
+        position: relative;
+      }
+
+      & svg {
+        width: 2rem;
+        position: absolute;
+
+        cursor: pointer;
       }
     }
 

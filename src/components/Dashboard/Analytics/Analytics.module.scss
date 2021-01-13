@@ -1,0 +1,23 @@
+@import "../../../variables";
+
+.Analytics {
+  padding: 2rem 3rem;
+
+  position: absolute;
+  z-index: 1;
+  top: 92px;
+  left: 100px;
+  width: 100%;
+  background: #f0f0f0;
+
+  & h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+  }
+
+  & .Container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 100px;
+  }
+}

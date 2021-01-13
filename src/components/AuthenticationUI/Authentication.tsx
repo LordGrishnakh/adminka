@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Spinner from "../UI/Spinner/Spinner";
+import { ReactComponent as EyeSVG } from "../Header/icons/evilEye.svg";
 
 import styles from "./Authentication.module.scss";
 
@@ -8,8 +9,10 @@ const Authentication: React.FC<{ authenticate: (a: boolean) => void }> = (
 ) => {
   const [loading, setLoading] = useState(false);
   const [showError, setShowError] = useState(false);
+
   const loginRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     setLoading(true);
@@ -29,11 +32,23 @@ const Authentication: React.FC<{ authenticate: (a: boolean) => void }> = (
     }
   };
 
+  const handleShowPassword = () => {
+    if (passwordRef.current!.type === "text") {
+      passwordRef.current!.type = "password";
+    } else {
+      passwordRef.current!.type = "text";
+    }
+  };
+
   return (
     <div className={styles.Container}>
       <div className={styles.AuthForm}>
         <img src="images/reactAdminkaLogoWhite.png" alt="logo" />
-        {showError && <div onClick={() => setShowError(false)} style={{ color: "red" }}>ERROR: login is not admin and password is not rogiTheGreat</div>}
+        {showError && (
+          <div onClick={() => setShowError(false)} style={{ color: "red" }}>
+            ERROR: login is not admin and password is not rogiTheGreat
+          </div>
+        )}
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label htmlFor="email">Логин</label>
@@ -46,6 +61,9 @@ const Authentication: React.FC<{ authenticate: (a: boolean) => void }> = (
               type="password"
               defaultValue="rogiTheGreat"
             />
+            <i className={styles.EyeIcon} onClick={handleShowPassword}>
+              <EyeSVG />
+            </i>
           </div>
           <button disabled={loading}>{!loading ? "Войти" : <Spinner />}</button>
         </form>
