@@ -13,7 +13,6 @@
     background-color: $primary-color;
     color: white;
 
-    
     & img {
       width: 50%;
       margin: 0 auto;
@@ -28,17 +27,27 @@
         padding: 1rem 0 1rem .5rem;
         font-size: 125%;
       }
+      
+      
+      
+      //Second FormGroup
+      &:last-of-type {
 
-      & input {
         position: relative;
+
+        & .EyeIcon {
+    
+          & svg {
+            width: $icon-width;
+            position: absolute;
+            top: calc(75% - #{$icon-height / 2});
+            right: .5rem;
+    
+            cursor: pointer;
+          }
+        }
       }
 
-      & svg {
-        width: 2rem;
-        position: absolute;
-
-        cursor: pointer;
-      }
     }
 
     & button {

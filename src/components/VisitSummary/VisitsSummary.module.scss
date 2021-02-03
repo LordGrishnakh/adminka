@@ -1,3 +1,17 @@
 .Container {
   border: 1px solid grey;
+  padding: 1rem;
+
+  & .TotalVisits {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.75rem;
+    margin: 1rem 0;
+  }
+
+  & .Breakdown {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
 }

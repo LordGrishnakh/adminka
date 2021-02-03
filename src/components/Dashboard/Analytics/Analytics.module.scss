@@ -2,7 +2,6 @@
 
 .Analytics {
   padding: 2rem 3rem;
-
   position: absolute;
   z-index: 1;
   top: 92px;
@@ -13,11 +12,47 @@
   & h2 {
     font-size: 2.5rem;
     font-weight: normal;
+
+    margin-bottom: 3rem;
   }
 
   & .Container {
     display: grid;
+    margin-right: 100px;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: minmax(200px auto) 400px minmax(300px, auto);
+    grid-auto-rows: minmax(300px, auto);
     grid-gap: 100px;
+
+    grid-template-areas:
+      "VisitsSummary  RevenueBreakdown AppPerformance"
+      "DailyChart DailyChart DailyChart"
+      "Statistics Statistics StatisticsRNS"
+      "Calendar Calendar Todo";
+
+    .VisitsSummary {
+      grid-area: VisitsSummary;
+    }
+    .RevenueBreakdown {
+      grid-area: RevenueBreakdown;
+    }
+    .AppPerformance {
+      grid-area: AppPerformance;
+    }
+    .DailyChart {
+      grid-area: DailyChart;
+    }
+    .Statistics {
+      grid-area: Statistics;
+    }
+    .StatisticsRNS {
+      grid-area: StatisticsRNS;
+    }
+    .Calendar {
+      grid-area: Calendar;
+    }
+    .Todo {
+      grid-area: Todo;
+    }
   }
 }

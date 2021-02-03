@@ -61,9 +61,9 @@ const Authentication: React.FC<{ authenticate: (a: boolean) => void }> = (
               type="password"
               defaultValue="rogiTheGreat"
             />
-            <i className={styles.EyeIcon} onClick={handleShowPassword}>
+            <div className={styles.EyeIcon} onClick={handleShowPassword}>
               <EyeSVG />
-            </i>
+            </div>
           </div>
           <button disabled={loading}>{!loading ? "Войти" : <Spinner />}</button>
         </form>

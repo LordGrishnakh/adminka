@@ -7,14 +7,30 @@ const Analytics: React.FC = () => {
     <div className={styles.Analytics}>
       <h2>Analytics</h2>
       <div className={styles.Container}>
-        <VisitsSummary />
-        <VisitsSummary />
-        <VisitsSummary />
-        <VisitsSummary />
-        <VisitsSummary />
-        <VisitsSummary />
-        <VisitsSummary />
-        <VisitsSummary />
+        <div className={styles.VisitsSummary}>
+          <VisitsSummary />
+        </div>
+        <div className={styles.RevenueBreakdown}>
+          <></>
+        </div>
+        <div className={styles.AppPerformance}>
+          <></>
+        </div>
+        <div className={styles.DailyChart}>
+          <></>
+        </div>
+        <div className={styles.Statistics}>
+          <></>
+        </div>
+        <div className={styles.StatisticsRNS}>
+          <></>
+        </div>
+        <div className={styles.Calendar}>
+          <></>
+        </div>
+        <div className={styles.Todo}>
+          <></>
+        </div>
       </div>
     </div>
   )
